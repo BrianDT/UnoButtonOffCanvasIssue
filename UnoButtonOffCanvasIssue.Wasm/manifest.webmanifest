@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UnoButtonOffCanvasIssue",
+  "display": "standalone",
+  "name": "UnoButtonOffCanvasIssue",
+  "short_name": "UnoButtonOffCanvasIssue",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

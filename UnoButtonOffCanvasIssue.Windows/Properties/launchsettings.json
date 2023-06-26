@@ -1,0 +1,10 @@
+{
+  "profiles": {
+	"UnoButtonOffCanvasIssue.Windows (Package)": {
+	  "commandName": "MsixPackage"
+	},
+	"UnoButtonOffCanvasIssue.Windows (Unpackaged)": {
+	  "commandName": "Project"
+	}
+  }
+}

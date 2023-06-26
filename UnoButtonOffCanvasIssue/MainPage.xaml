@@ -1,0 +1,41 @@
+<Page x:Class="UnoButtonOffCanvasIssue.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1"  SizeChanged="Container_SizeChanged">
+            <Border CornerRadius="2" BorderThickness="2" BorderBrush="Green"/>
+            <Canvas>
+                <Button Click="Button_Click"
+                    Canvas.Left="{x:Bind VM.X, Mode=OneWay}"
+                    Canvas.Top="{x:Bind VM.Y, Mode=OneWay}"
+                    Content="Press Me" Background="Red" BorderBrush="Black" BorderThickness="1" Padding="4"/>
+            </Canvas>
+        </Grid>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" >
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Translate: (" />
+                <TextBlock Text="{x:Bind VM.XY, Mode=OneWay}"  MinWidth="80"/>
+                <TextBlock Text=") Size: (" />
+                <TextBlock Text="{x:Bind VM.BXBY, Mode=OneWay}" MinWidth="80" />
+                <TextBlock Text=")" />
+            </StackPanel>
+            <TextBlock Text="{x:Bind VM.Monitor, Mode=OneWay}" />
+        </StackPanel>
+    </Grid>
+</Page>
